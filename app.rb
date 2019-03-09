@@ -29,11 +29,12 @@ class App < Sinatra::Base
   end
 
   get '/:operation/:number1/:number2' do
-    @operation = params[:operation].method('@operation')
+    @operation = params[:operation]
     @number1 = params[:number1].to_i
     @number2 = params[:number2].to_i
-    # @answer = @number1 @operation @number2
- binding.pry
+   if @operation == "add"
+     @answer = @number1 + @number2
+
 end
 
 
